@@ -76,12 +76,27 @@ namespace csharp_functions
         //Terzo esercizio
         public static int[] ElevaArrayAlQuadrato(int[] array)
         {
-            for(int i = 0; i < array.Length; i++)
+            for (int i = 0; i < array.Length; i++)
             {
                 array[i] *= array[i];
             }
             return array;
+
+            // terzo esercizio corretto 
+
+            //  public static int[] Quadrato(int[] array)
+            //  {
+            //    int[] quadrato = (int[])array.Clone(); CHE PERMETTE DI COPIARE L'ARRAY
+            //      for (int i = 0; i < quadrato.Length; i++)
+            //      {
+            //          quadrato[i] *= quadrato[i]; oppure quadrato[i] = Quadrato(quadrato[i]);
+            //      }        
+            //
+            //    return quadrato;
+            //  }
         }
+
+
 
         //Quarto Esercizio
         public static int Somma(int[] Array)
