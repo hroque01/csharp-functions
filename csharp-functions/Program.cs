@@ -1,4 +1,6 @@
-﻿namespace csharp_functions
+﻿using System.Buffers;
+
+namespace csharp_functions
 {
     internal class Program
     {
@@ -11,8 +13,9 @@
             //Secondo esercizio
             Quadrato(5);
             Console.WriteLine(Quadrato(5));
-            
+
             //Terzo esercizio
+            StampaArray(ElevaArrayAlQuadrato(myArr));
         }
 
         //Primo esercizio
@@ -20,7 +23,7 @@
         {   
             for (int i = 0; i < array.Length; i++)
             {
-                Console.WriteLine($"Elemento {i}");
+                Console.WriteLine($"Elemento {array[i]}");
             }
         }
 
@@ -31,6 +34,14 @@
             return potenza;
         }
 
-       
+        //Terzo esercizio
+        public static int[] ElevaArrayAlQuadrato(int[] array)
+        {
+            for(int i = 0; i < array.Length; i++)
+            {
+                array[i] *= array[i];
+            }
+            return array;
+        }
     }
 }
