@@ -1,5 +1,6 @@
 ﻿using System.Buffers;
 using System.Linq;
+using System.Threading.Channels;
 
 namespace csharp_functions
 {
@@ -34,7 +35,25 @@ namespace csharp_functions
             Console.WriteLine("Stampare la somma dell'array: ");
             Console.WriteLine(Somma(myArrSum));
 
+            Console.WriteLine("Il quadrato della somma dell' array: ");
             Console.WriteLine(Quadrato(Somma(myArrSum)));
+
+            Console.WriteLine("********* BONUS **********");
+            //BONUS
+            Console.Write("Inserisci la grandezza del tuo array: ");
+            int dimensioni = Int32.Parse(Console.ReadLine());
+            int[] myArrBello = ArrayPersonalizzato(dimensioni);
+            Console.WriteLine("Il tuo array:");
+            StampaArray(myArrBello);
+            StampaArray(ElevaArrayAlQuadrato(myArrBello));
+
+            Console.WriteLine("La tua somma: ");
+            Console.WriteLine(Somma(myArrBello));
+
+            Console.WriteLine("Il quadrato della somma del tuo array: ");
+            Console.WriteLine(Quadrato(Somma(myArrBello)));
+
+
 
         }
 
@@ -73,6 +92,19 @@ namespace csharp_functions
                 sum += Array[i];
             }
             return sum;
+        }
+
+        //BONUS
+        public static int[] ArrayPersonalizzato(int dimensioni)
+        {
+            int[] array = new int[dimensioni];
+            for (int i = 0; i < dimensioni; i++)
+            {
+                Console.Write("Inserisci i numeri");
+                int numeriIns = Int32.Parse(Console.ReadLine());
+                array[i] = numeriIns;
+            }
+            return array;
         }
     }
 }
